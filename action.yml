@@ -24,12 +24,7 @@ inputs:
   docker_compose_filename:
     description: Docker compose file to use
     default: docker-compose.yml
-  pull:
-    description: Docker Compose pull images.
-    default: 'false'   
-  use_stack:
-    description: Use docker stack instead of docker compose ("true" or "false").
-    default: 'false'
+
 runs:
   using: docker
   image: Dockerfile
@@ -40,5 +35,7 @@ runs:
     SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
     DOCKER_COMPOSE_FILENAME: ${{ inputs.docker_compose_filename }}
     DOCKER_COMPOSE_PREFIX: ${{ inputs.docker_compose_prefix }}
-    USE_DOCKER_STACK: ${{ inputs.use_stack }}
-    PULL: ${{ inputs.pull }}
+    DB_HOST: ${{ inputs.db_host }}
+    DB_PORT: ${{ inputs.db_port }}
+    DB_USER: ${{ inputs.db_user }}
+    DB_PWD: ${{ inputs.db_pwd }}
