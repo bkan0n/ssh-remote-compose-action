@@ -24,16 +24,16 @@ inputs:
   docker_compose_filename:
     description: Docker compose file to use
     default: docker-compose.yml
-  db_host: ${{ secrets.DB_HOST }}
+  db_host: 
     description: Host
     required: true
-  db_port: ${{ secrets.DB_PORT }}
+  db_port: 
     description: Port
     required: true
-  db_user: ${{ secrets.DB_USER }}
+  db_user: 
     description: User
     required: true
-  db_pwd: ${{ secrets.DB_PWD }}
+  db_pwd: 
     description: Pass
     required: true  
 
