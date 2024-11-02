@@ -36,6 +36,12 @@ inputs:
   db_pwd: 
     description: Pass
     required: true  
+  db_name:
+    description: DB Name
+    required: true
+  api_root:
+    description: api root
+    required: true
 
 runs:
   using: docker
@@ -51,3 +57,5 @@ runs:
     DB_PORT: ${{ inputs.db_port }}
     DB_USER: ${{ inputs.db_user }}
     DB_PWD: ${{ inputs.db_pwd }}
+    DB_NAME: ${{ inputs.db_name }}
+    API_ROOT: ${{ inputs.api_root }}
