@@ -39,12 +39,13 @@ inputs:
   db_name:
     description: DB Name
     required: true
-  api_root:
+  x_api_root:
     description: api root
     required: true
-  api_key:
+  x_api_key:
     description: api key
     required: true
+
 
 runs:
   using: docker
@@ -61,5 +62,5 @@ runs:
     DB_USER: ${{ inputs.db_user }}
     DB_PWD: ${{ inputs.db_pwd }}
     DB_NAME: ${{ inputs.db_name }}
-    API_ROOT: ${{ inputs.api_root }}
-    API_KEY: ${{ inputs.api_key }}
+    X_API_ROOT: ${{ inputs.x_api_root }}
+    X_API_KEY: ${{ inputs.x_api_key }}
