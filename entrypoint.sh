@@ -20,7 +20,7 @@ tar cjvf /tmp/workspace.tar.bz2 --exclude .git .
 log "Launching ssh agent."
 eval `ssh-agent -s`
 
-remote_command="set -e ; log() { echo '>> [remote]' \$@ ; } ; cleanup() { log 'Removing workspace...'; rm -rf \"\$HOME/workspace\" ; } ; log 'Creating workspace directory...' ; mkdir -p \"\$HOME/workspace\" ; trap cleanup EXIT ; log 'Unpacking workspace...' ; tar -C \"\$HOME/workspace\" -xjv ; log 'Launching docker compose...' ; cd \"\$HOME/workspace\" ; DB_HOST=$DB_HOST DB_PORT=$DB_PORT DB_USER=$DB_USER DB_PWD=$DB_PWD DB_NAME=$DB_NAME X_API_ROOT=$X_API_ROOT X_API_KEY=$X_API_KEY docker compose -f \"$DOCKER_COMPOSE_FILENAME\" -p \"$DOCKER_COMPOSE_PREFIX\" up -d --remove-orphans --build"
+remote_command="set -e ; log() { echo '>> [remote]' \$@ ; } ; cleanup() { log 'Removing workspace...'; rm -rf \"\$HOME/workspace\" ; } ; log 'Creating workspace directory...' ; mkdir -p \"\$HOME/workspace\" ; trap cleanup EXIT ; log 'Unpacking workspace...' ; tar -C \"\$HOME/workspace\" -xjv ; log 'Launching docker compose...' ; cd \"\$HOME/workspace\" ; DB_HOST=$DB_HOST DB_PORT=$DB_PORT DB_USER=$DB_USER DB_PWD=$DB_PWD DB_NAME=$DB_NAME X_API_ROOT=$X_API_ROOT X_API_KEY=$X_API_KEY DISCORD_CLIENT_ID=$DISCORD_CLIENT_ID DISCORD_CLIENT_SECRET=$DISCORD_CLIENT_SECRET docker compose -f \"$DOCKER_COMPOSE_FILENAME\" -p \"$DOCKER_COMPOSE_PREFIX\" up -d --remove-orphans --build"
 
 
 #

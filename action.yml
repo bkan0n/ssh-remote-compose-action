@@ -45,6 +45,12 @@ inputs:
   x_api_key:
     description: api key
     required: true
+  discord_client_id:
+    description: discord client id
+    required: true
+  discord_client_secret:
+    description: discord secret id
+    required: true
 
 
 runs:
@@ -64,3 +70,5 @@ runs:
     DB_NAME: ${{ inputs.db_name }}
     X_API_ROOT: ${{ inputs.x_api_root }}
     X_API_KEY: ${{ inputs.x_api_key }}
+    DISCORD_CLIENT_ID: ${{ inputs.discord_client_id }}
+    DISCORD_CLIENT_SECRET: ${{ inputs.discord_client_secret }}
