@@ -24,34 +24,6 @@ inputs:
   docker_compose_filename:
     description: Docker compose file to use
     default: docker-compose.yml
-  db_host: 
-    description: Host
-    required: true
-  db_port: 
-    description: Port
-    required: true
-  db_user: 
-    description: User
-    required: true
-  db_pwd: 
-    description: Pass
-    required: true  
-  db_name:
-    description: DB Name
-    required: true
-  x_api_root:
-    description: api root
-    required: true
-  x_api_key:
-    description: api key
-    required: true
-  discord_client_id:
-    description: discord client id
-    required: true
-  discord_client_secret:
-    description: discord secret id
-    required: true
-
 
 runs:
   using: docker
@@ -63,12 +35,4 @@ runs:
     SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
     DOCKER_COMPOSE_FILENAME: ${{ inputs.docker_compose_filename }}
     DOCKER_COMPOSE_PREFIX: ${{ inputs.docker_compose_prefix }}
-    DB_HOST: ${{ inputs.db_host }}
-    DB_PORT: ${{ inputs.db_port }}
-    DB_USER: ${{ inputs.db_user }}
-    DB_PWD: ${{ inputs.db_pwd }}
-    DB_NAME: ${{ inputs.db_name }}
-    X_API_ROOT: ${{ inputs.x_api_root }}
-    X_API_KEY: ${{ inputs.x_api_key }}
-    DISCORD_CLIENT_ID: ${{ inputs.discord_client_id }}
-    DISCORD_CLIENT_SECRET: ${{ inputs.discord_client_secret }}
+
